@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Nunito", serif;
+  background-color: rgba(26, 26, 31, 0.904);
+  color: rgba(240, 255, 255, 0.877);
+}
+h1 {
+  text-align: center;
+  margin-top: 1.5em;
+}
+.fullclick {
+  width: clamp(360px, 40vw, 550px);
+  /*max-width: 30vw;*/
+  margin: 1rem auto;
+}
+.fullclick li {
+  margin: 1rem auto;
+  padding: 0.5rem;
+  line-height: 2rem;
+  border-radius: 3px;
+  background: rgba(36, 31, 31, 0.884);
+  list-style: none;
+  position: relative;
+  transition: 0.3s;
+}
+.todelete {
+  opacity: 0;
+}
+.fullclick li:hover,
+.fullclick li:focus-within {
+  background: rgba(61, 58, 58, 0.582);
+  box-shadow: inset 0 1px 0 rgba(56, 54, 54, 0.712),
+    0 1px 3px rgba(0, 0, 0, 0.589);
+}
+.fullclick p a {
+  color: rgba(14, 201, 14, 0.897);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+.fullclick p a:hover {
+  text-decoration: underline;
+}
+li a.main {
+  display: block;
+  text-align: right;
+  color: rgb(128, 128, 199);
+  z-index: 1;
+}
+li a.main::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+.fullclick li button {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  line-height: 0px;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+  background: rgba(46, 42, 42, 0.795);
+  border: none;
+  cursor: pointer;
+  color: azure;
+  display: none;
+}
+/*I used "display: none" instead of "opacity: 0"*/
+.fullclick li:hover button,
+.fullclick li:focus-within button {
+  display: block;
+}
